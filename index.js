@@ -2,11 +2,13 @@ const express = require('express');
  require('dotenv').config()
  require('crypto');
 require('bcrypt');
-const port =process.env.PORT || 3000;
+const port =process.env.PORT || 8000;
 const app = express();
 const ejs = require('ejs');
 const ejsLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
+
+// passport is used for authentication 
 const passport = require('passport');
 const passportLocals = require('./config/passport_local_strategy');
 const passportGoogle = require('./config/psaaport_google_oauth_strategy');
@@ -18,9 +20,11 @@ const customMflash = require('./config/customeMiddleware');
 
 app.use(express.urlencoded({extended:true}));
 
+// setting up static files
 app.use(express.static('./assets'));
 app.use('uploads', express.static(__dirname + '/uploads'));
 
+// using ejs layouts for setup views
 app.use(ejsLayouts);
 
 app.set('views', './views');
@@ -29,10 +33,7 @@ app.set('view engine', 'ejs');
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-
-
-
-
+// session creation for authentication
 app.use(session({
     name: "authentication",
     secret: 'nodejs',
@@ -47,6 +48,7 @@ app.use(session({
     })
 }))
 
+// passport initialization for use of middlewares
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -57,7 +59,6 @@ app.use(customMflash.setFlash)
 
 
 app.use('/', require('./routes'));
-
 
 app.listen(port, function(err){
     if(err){

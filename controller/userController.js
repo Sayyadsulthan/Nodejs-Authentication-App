@@ -3,13 +3,14 @@ const OTPMailer = require('../mailers/OTP_mailer');
 // const bcryptdoc = require('../config/bcryptdoc');
 const bcrypt = require('bcrypt');
 
-// used to hasgh the password / encrypt
+// used to hash the password / encrypt
 async function hashPassword(plaintextPassword) {
     const hash = await bcrypt.hash(plaintextPassword, 10);
     // Store hash in the database
     return hash;
 }
 
+// generate randome otp
 function generateOTP() {
     let pass = '';
     for (i = 0; i < 6; i++) {
@@ -27,15 +28,15 @@ module.exports.sign_up = function (req, res) {
     return res.render('sign_up');
 }
 
+// to create user in db
 module.exports.create = async function (req, res) {
 
     try {
         let user = await User.findOne({ email: req.body.email })
 
         if (!user) {
-            // let algorithm = "aes-256-cbc";
-            // let Securitykey =  crypto.randomBytes(32);
-            // let initVector = crypto.randomBytes(16);
+
+        //    calling hashpassword method to encrypt password
            let encryptedData= await hashPassword(req.body.password);
 
             await User.create({
@@ -50,7 +51,7 @@ module.exports.create = async function (req, res) {
         }
 
         req.flash('warning', "User already Exist!..")
-        console.log("user already exist")
+        console.log("user already exist..")
         return res.redirect('/users/sign_in');
 
     } catch (err) {
@@ -66,6 +67,7 @@ module.exports.login = function (req, res) {
 
 module.exports.createSession = function (req, res) {
     req.flash('success', "You have Logged in..")
+    console.log('user login successfull..')
     return res.redirect('/');
 }
 
