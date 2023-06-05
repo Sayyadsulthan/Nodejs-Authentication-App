@@ -42,7 +42,7 @@ app.use(session({
         maxAge: (1000 * 60 * 100)
     },
     store: mongoStore.create({
-        mongoUrl: 'mongodb://127.0.0.1:27017/Nodejs_Authentication',
+        mongoUrl: process.env.DB_URI,
         autoRemove: 'disabled'
     })
 }))
