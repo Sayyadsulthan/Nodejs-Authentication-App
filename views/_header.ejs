@@ -1,0 +1,21 @@
+<header>
+    
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/img/logo_1.jpg" alt="" width="30" height="30" class="d-inline-block align-text-top">
+            Authentication System
+          </a>
+
+          <% if(locals.user){ %>
+        <button><a href="/users/destroy">logout </a></button>
+    <% }else{ %>
+        <div id="sign-up-in-container">
+            <button><a href="/users/sign_in">sign-in</a></button>
+            <button><a href="/users/sign_up">sign-up</a></button>
+        </div>
+    <% } %>
+        </div>
+      </nav>
+</header>

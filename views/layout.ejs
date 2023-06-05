@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/layout.css">
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/66a49a29d4.js" crossorigin="anonymous"></script>
+
+    <!-- noty link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+        <!-- partial styles -->
+    <%- style %>
+</head>
+
+<body>
+    <%- include('_header'); %>
+
+        <main>
+            <!-- partial body -->
+            <%- body %>
+
+        </main>
+
+        <%- include('_footer'); %>
+
+        <script>
+            <% if(locals.flash.success.length >0) {%>
+                new Noty({ 
+                   type: 'success',
+                   theme: 'relax',
+                   layout: 'topRight',
+                   text: "<%= locals.flash.success %>",
+                   timeout: 1500
+                    }).show(); 
+               <% } %>
+   
+               <% if(locals.flash.error.length >0) {%>
+                     new Noty({ 
+                       type: 'error',
+                       theme: 'relax',
+                       layout: 'topRight',
+                       text: "<%= locals.flash.error %>",
+                       timeout: 1500
+                      }).show(); 
+                   <% } %>
+   
+                   <% if(locals.flash.warning.length >0) {%>
+                          new Noty({ 
+                           type: 'warning',
+                           theme: 'relax',
+                           layout: 'topRight',
+                           text: "<%= locals.flash.warning %>",
+                           timeout: 1500
+                          }).show(); 
+                       <% } %>
+        </script>
+
+            <!-- partial scripts -->
+        <%- script %>
+
+        <!-- bootstrap link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+
+            
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<ul>
+    <li>
+        <p>
+            <%= user.name %>
+        </p>
+    </li>
+    <li>
+        <form action="/users/reset_password/<%= user.id %>" method="post">
+            <!-- <input type="email" name="email" id="" placeholder="Enter email to send otp.."> -->
+            <button>Reset</button>
+        </form>
+    </li>
+    
+</ul>
+<section>
+
+    <p>
+        This is an web-development project conducted by <strong> Coding Ninjas </strong>.
+    </p>
+    <p>
+        In this project you can seen the <strong>Reset </strong> password option which is used to change the user's password by the <strong> OTP</strong>
+        Which has been sent to the user's email if the <strong> OTP </strong> matches the the uer can change or update the Password in this application.
+    </p>
+    
+    <p> If you are interested in the web development in <strong> Node.JS </strong> Here you can see some Example Node.js Application</p>
+    <p><button><a href="https://nodejs.dev/en/learn/" target="_blank">Click here for Node Example</a></button></p>
+</section>

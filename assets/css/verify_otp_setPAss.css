@@ -1,0 +1,23 @@
+#container-form {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  border: 2px solid black;
+  width: 50%;
+  border-radius: 1rem;
+  background-color: white;
+  color: black;
+}
+#container-form input {
+  border: none;
+  border-bottom: 1px solid black;
+  margin: 10px;
+}
+#container-form form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+#container-form form button:hover {
+  border-radius: 10px;
+}

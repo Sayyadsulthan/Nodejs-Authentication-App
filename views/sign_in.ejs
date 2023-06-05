@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/sign_in_up.css">
+<div id="form-container">
+    <section id="display-container">
+
+        <form action="/users/createSession" method="post">
+            <input type="email" name="email" placeholder="enter email">
+            <input type="password" name="password" placeholder="enter password">
+            <div>
+                <button type="submit">sign-in</button>
+            </div>
+        </form>
+
+
+
+
+        <div id="sub-sign-container">
+            <p>or</p>
+            <div>
+                Don't have an Account? <a href="/users/sign_up"><button id="sign-up"> sign_up </button> </a>
+            </div>
+            
+            <div>
+                <a href="/users/auth/google" ">
+                    <button id="google-sign" style="color: black;">  <i class="fa-brands fa-google"></i> Continue with Google </button>
+                </a>
+            </div>
+            
+            <div>
+                <a href="/users/auth/facebook" ">
+                    <button id="google-sign" style="color: black;">  <i class="fa-brands fa-facebook"></i> Continue with Facebook </button>
+                </a>
+            </div>
+            
+        </div>
+    </section>
+</div>

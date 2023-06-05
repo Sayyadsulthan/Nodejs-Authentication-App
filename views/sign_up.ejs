@@ -1,0 +1,39 @@
+
+<link rel="stylesheet" href="/css/sign_in_up.css">
+<div id="form-container">
+    <section id="display-container">
+
+        <form action="/users/create" method="post">
+            <input type="text" name="name" placeholder="enter name">
+            <input type="email" name="email" placeholder="enter email">
+            <input type="password" name="password" placeholder="enter password">
+            <input type="password" name="confirm_password" placeholder="enter confirm_password">
+            <div>
+                <button type="submit">sign-up</button>
+            </div>
+        </form>
+
+
+
+
+        <div id="sub-sign-container">
+            <p>or</p>
+            <div>
+                Aready have an Account? <a href="/users/sign_in"><button id="sign-up"> sign_up </button> </a>
+            </div>
+            
+            <div>
+                <a href="/users/auth/google" ">
+                    <button id="google-sign" style="color: black;">  <i class="fa-brands fa-google"></i> Continue with Google </button>
+                </a>
+            </div>
+            
+            <div>
+                <a href="/users/auth/facebook" ">
+                    <button id="google-sign" style="color: black;">  <i class="fa-brands fa-facebook"></i> Continue with Facebook </button>
+                </a>
+            </div>
+            
+        </div>
+    </section>
+</div>

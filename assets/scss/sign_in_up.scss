@@ -1,0 +1,63 @@
+#form-container{
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    
+    form{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+
+        input{
+            margin: 5px;
+        }
+
+    }
+
+    #display-container{
+        border-radius: 1rem;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+        input{
+            border:none ;
+            border-bottom: 2px solid black;
+            margin: 15px;
+        }
+        a{
+            color: black;
+        }
+
+        #sub-sign-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+    
+            div{
+                margin: 5px;
+            }
+    
+        }
+    }
+
+    
+
+    button{
+        width: 100%;
+    }
+
+    #sign-up{
+        background-color: #3fcc50d6;
+    }
+
+    #google-sign{
+        background-color: white;
+    }
+}
