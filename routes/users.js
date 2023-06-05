@@ -39,17 +39,20 @@ router.get('/auth/facebook/callback', passport.authenticate(
     {failureRedirect: '/users/sign_in'}
 ), userController.createSession);
 
-
+// for logout
 router.get('/destroy',passport.checkAuthenticatedUser, userController.destroySession);
 
 
-    
+    // FOR OTP AND RESET ROUTES
 // router.get('/forgot_password', userController.forgot_password);
 router.post('/reset_password/:id',passport.checkAuthenticatedUser, userController.reset_password);
 router.get('/verify_otp',passport.checkAuthenticatedUser, userController.verify_otp);
 router.post('/verifyOTP',passport.checkAuthenticatedUser, userController.verifyOTP);
-router.get('/set_Password',passport.checkAuthenticatedUser, userController.set_Password);
 
+
+// used for rendering set_Password page/ template 
+router.get('/set_Password',passport.checkAuthenticatedUser, userController.set_Password);
+// used for Controller set_password  
 router.post('/set_password', userController.set_password);
 
 

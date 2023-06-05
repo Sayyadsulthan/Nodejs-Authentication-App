@@ -4,6 +4,7 @@ const User = require('../models/user');
 const crypto = require('crypto');
 require('dotenv').config()
 
+// passport FACEBOOK Strategy for authentication
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_client_ID,
     clientSecret: process.env.FACEBOOK_client_Secret,

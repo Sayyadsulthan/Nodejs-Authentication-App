@@ -19,6 +19,7 @@ async function comparePassword(plaintextPassword, hash) {
     return result;
 }
 
+// passport LOCAL Strategy for authentication
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passReqToCallback: true

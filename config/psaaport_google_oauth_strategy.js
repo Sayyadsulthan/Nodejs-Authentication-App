@@ -5,7 +5,7 @@ const User = require('../models/user');
 require('dotenv').config();
 
 
-
+// passport GOOGLE Strategy for authentication
 passport.use(new googleStrategy({
     clientID:process.env.GOOGLE_client_ID,
     clientSecret:process.env.GOOGLE_client_Secret,

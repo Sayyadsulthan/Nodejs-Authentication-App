@@ -65,12 +65,14 @@ module.exports.login = function (req, res) {
     return res.redirect('/');
 }
 
+// if session creation successfull this will work
 module.exports.createSession = function (req, res) {
     req.flash('success', "You have Logged in..")
     console.log('user login successfull..')
     return res.redirect('/');
 }
 
+// used to logout/ sign out
 module.exports.destroySession = function (req, res) {
     req.logout(function (err) {
         if (err) { console.log("err in logout: ", err); return }

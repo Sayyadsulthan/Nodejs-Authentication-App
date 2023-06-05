@@ -4,7 +4,7 @@ const path = require('path');
 const { realpath } = require('fs');
 require('dotenv').config();
 
-
+// to send mail via gmail smtp 
 let transporter = nodemailer.createTransport({
     service:'gmail',
     host:'smtp.gmail.com',
@@ -16,6 +16,7 @@ let transporter = nodemailer.createTransport({
     }
 })
 
+// to render html template in gmail
 let renderTemplate = (data, relativePath)=>{
     let mainHTML;
     ejs.renderFile(
